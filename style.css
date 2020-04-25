@@ -17,9 +17,9 @@ h1{
     color: #ffffff;
 }
 .screen{
-    cursor: pointer;
+    cursor: pointer; 
     width: 50%;
-    background-color: black !important;
+     background-color: black !important; 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }

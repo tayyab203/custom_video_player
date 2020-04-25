@@ -1,9 +1,10 @@
-const video = Document.getElementById('video');
-const play = Document.getElementById('play');
-const stop = Document.getElementById('stop');
-const progress = Document.getElementById('progress');
-const timestamp = Document.getElementById('timestamp');
+const video = document.getElementById('video');
+const play = document.getElementById('play');
+const stop = document.getElementById('stop');
+const progress = document.getElementById('progress');
+const timestamp = document.getElementById('timestamp');
 
+// play videos
 function toggleVideoStatus(){
     if (video.paused) {
         video.play();
@@ -33,6 +34,7 @@ function updateprogress(){
        secs = '0' +String(secs);
    }
 
+    timestamp.innerHTML ='${mins}:${secs}';
 }
 
 function setVideoprogress(){
@@ -45,10 +47,10 @@ function stopvideo(){
     video.pause();
 }
 
-video.addEventLister('click',tagglevideoStatus);
-video.addEventLister('pause',updateplayIcon);
-video.addEventLister('play',updateplayIcon);
-video.addEventLister('timeupdate',tagglevideoStatus);
+video.addEventListener('click', toggleVideoStatus);
+video.addEventListener('pause', updateplayIcon);
+video.addEventListener('play', updateplayIcon);
+video.addEventListener('timeupdate', toggleVideoStatus);
 
 play.addEventLister('click',toggleVideoStatus);
 
