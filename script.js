@@ -21,11 +21,23 @@ function updateplayIcon(){
 }
 
 function updateprogress(){
-    return true;
+   progress.value = (video.currentTime/video.duration)*100;
+
+   let mins = math.floor(video.currentTime/60);
+   if(mins < 10){
+       mins = '0' +String(mins);
+   }
+
+   let secs = math.floor(video.currentTime%60);
+   if(secs < 10){
+       secs = '0' +String(secs);
+   }
+
 }
 
 function setVideoprogress(){
-    return true;
+  video.currentTime = (+progress.value*video .duration)/
+  100;
 }
 
 function stopvideo(){
